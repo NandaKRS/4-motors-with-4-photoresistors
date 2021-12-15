@@ -1,0 +1,105 @@
+// C++ code
+//
+int Bt= 600;
+int sp1= A0;
+int sp2=A1;
+int sp3=A2;
+int sp4=A3;
+//int enA=2;
+//int in1=3;
+//int in2=4;
+
+//int enB=5;
+//int in3=6;
+//int in4=7;
+
+
+
+
+void setup()
+{
+  pinMode(2,OUTPUT);
+  pinMode(5,OUTPUT);
+  pinMode(8,OUTPUT);
+  pinMode(11,OUTPUT);
+  //pinMode(enA, OUTPUT);
+  //pinMode(enB, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(7, OUTPUT);
+  pinMode(9, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(12, OUTPUT);
+  pinMode(13, OUTPUT);
+  
+  //analogWrite(enA, 2);
+  //analogWrite(enB, 2);
+}
+
+void loop()
+{
+  int SV1 = analogRead(sp1);
+  int SV2 = analogRead(sp2);
+  int SV3 = analogRead(sp3);
+  int SV4 = analogRead(sp4);
+  //if(SV1 == 1 || SV2 ==1 || SV3==1 ||SV4==1){
+  if (SV1 < Bt){
+   digitalWrite(2,HIGH);
+    digitalWrite(3,HIGH);
+    digitalWrite(4,LOW);
+    digitalWrite(6,HIGH);
+    digitalWrite(7,LOW);
+  }
+  else if(SV2 < Bt) {
+    
+    digitalWrite(2,LOW);
+    digitalWrite(5,HIGH);
+    
+    digitalWrite(3,LOW);
+    digitalWrite(4,HIGH);
+    digitalWrite(6,LOW);
+    digitalWrite(7,HIGH);}
+  else if(SV3 <Bt){
+  digitalWrite(2,LOW);
+    digitalWrite(5,LOW);
+    digitalWrite(8,HIGH);
+    digitalWrite(3,LOW);
+    digitalWrite(4,LOW);
+    digitalWrite(6,LOW);
+    digitalWrite(7,LOW);
+    digitalWrite(9,HIGH);
+    digitalWrite(10,LOW);
+    digitalWrite(12,HIGH);
+    digitalWrite(13,LOW);}
+    
+  else if(SV4<Bt) {
+    digitalWrite(2,LOW);
+    digitalWrite(5,LOW);
+    digitalWrite(8,LOW);
+    digitalWrite(11,HIGH);
+   digitalWrite(3,LOW);
+    digitalWrite(4,LOW);
+    digitalWrite(6,LOW);
+    digitalWrite(7,LOW);
+  digitalWrite(9,LOW);
+  digitalWrite(10,HIGH);
+  digitalWrite(12,LOW);
+    digitalWrite(13,HIGH);}
+  
+  else {
+    digitalWrite(2,LOW);
+    digitalWrite(5,LOW);
+    digitalWrite(8,LOW);
+    digitalWrite(11,LOW);
+  digitalWrite(3,LOW);
+  digitalWrite(4,LOW);
+  digitalWrite(6,LOW);
+  digitalWrite(7,LOW);
+  digitalWrite(9,LOW);
+    digitalWrite(10,LOW);
+  digitalWrite(12,LOW);
+   digitalWrite(13,LOW);}
+  //}
+    
+}
